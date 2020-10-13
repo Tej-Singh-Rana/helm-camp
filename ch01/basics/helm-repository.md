@@ -153,6 +153,63 @@ $ cat /root/.config/helm/repositories.yaml
 $ cat /root/.cache/helm/repository
 ```
 
+# Remote Helm Repository
+
+- Clone the git repository locally.
+
+```
+$ git clone https://github.com/Tej-Singh-Rana/helm-chart.git
+```
+
+- Copy the chart archive file into the cloned repo directory and index 
+
+```
+$ ls
+helm-chart  nginx-deploy  nginx-deploy-0.1.0.tgz  start.sh
+
+$ cp -v nginx-deploy-0.1.0.tgz helm-chart/.
+'nginx-deploy-0.1.0.tgz' -> 'helm-chart/./nginx-deploy-0.1.0.tgz'
+
+$ cd helm-chart/
+
+$ pwd
+/root/helm-chart
+
+# Generate the index.yaml file which contains the information about packages, version.
+$ helm repo index .
+
+$ ls
+index.yaml  nginx-deploy-0.1.0.tgz
+
+$ cat index.yaml
+apiVersion: v1
+entries:
+  nginx-deploy:
+  - apiVersion: v2
+    appVersion: 1.16.0
+```
+
+- Git add, commit and push to the github repository.
+
+```
+$ git add .
+
+$ git commit -m "Chart package" .
+
+$ git push
+```
+
+- Add github repo into the helm repository 
+
+```
+$ helm repo add remote-helm https://raw.githubusercontent.com/Tej-Singh-Rana/helm-chart/main
+```
+
+- List the helm repo
+
+```
+$ helm repo list
+```
 
 
 
