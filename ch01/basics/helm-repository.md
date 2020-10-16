@@ -1,4 +1,4 @@
-# Helm create
+# Helm Create
 
 - Creating a helm chart.
 - `helm create <chart-name>`
@@ -55,7 +55,7 @@ NAME                              DESIRED   CURRENT   READY   AGE
 replicaset.apps/nginx-f89759699   1         1         1       31m
 ```
 
-# Helm list
+# Helm List
 
 - View the deployed chart.
 
@@ -73,7 +73,7 @@ default-token-td8cm           kubernetes.io/service-account-token   3      28m
 sh.helm.release.v1.nginx.v1   helm.sh/release.v1                    1      16m
 ```
 
-# Helm package
+# Helm Package
 
 - It'll create an archive file.
 - `helm package <path-of-chart> --destination <path-to-save>`
@@ -86,7 +86,7 @@ $ ls
 nginx-deploy  nginx-deploy-0.1.0.tgz  start.sh
 ```
 
-# Helm delete
+# Helm Delete
 
 - Delete the chart.
 - `helm delete <chart-name>`
@@ -96,7 +96,7 @@ $ helm delete nginx
 release "nginx" uninstalled
 ```
 
-# Helm repo
+# Helm Repo
 
 - Adding repo in the helm. 
 - `helm repo add <repo-name> <URL>`
@@ -123,7 +123,7 @@ $ helm repo update
 $ helm repo list
 ```
 
-# Helm search 
+# Helm Search 
 
 - To search the repository. 
 - `helm search repo <repo-name>/<chart-name>`
@@ -210,9 +210,5 @@ $ helm repo add remote-helm https://raw.githubusercontent.com/Tej-Singh-Rana/hel
 ```
 $ helm repo list
 ```
-
-
-
-
 
 
