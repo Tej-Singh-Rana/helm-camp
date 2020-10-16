@@ -140,8 +140,11 @@ REVISION        UPDATED                         STATUS          CHART           
 
 # Helm Rollback
 
-- 
+- Rollback to the previous release if any issue happened with the updated release.
+- `helm rollback <release-name> <revision>`.
+
 ```
+$ helm rollback cassandra-power 1
 ```
 
 # Helm History
