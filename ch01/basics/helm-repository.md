@@ -1,7 +1,7 @@
 # Helm Create
 
 - Creating a helm chart.
-- `helm create <chart-name>`
+- `helm create <chart-name>`.
 
 ```
 # It'll create a chart directory
@@ -23,7 +23,7 @@ test-connection.yaml
 # Helm Install
 
 - Deploying a chart.
-- `helm install <chart-name> <path-of-chart>`
+- `helm install <chart-name> <path-of-chart>`.
 
 ```
 $ helm install nginx ./nginx-deploy/
@@ -58,6 +58,7 @@ replicaset.apps/nginx-f89759699   1         1         1       31m
 # Helm List
 
 - View the deployed chart.
+- **Aliases:** list, ls  **Ex:** `helm ls`.
 
 ```
 $ helm list
@@ -76,7 +77,7 @@ sh.helm.release.v1.nginx.v1   helm.sh/release.v1                    1      16m
 # Helm Package
 
 - It'll create an archive file.
-- `helm package <path-of-chart> --destination <path-to-save>`
+- `helm package <path-of-chart> --destination <path-to-save>`.
 
 ```
 $ helm package ./nginx-deploy/ --destination .
@@ -89,8 +90,9 @@ nginx-deploy  nginx-deploy-0.1.0.tgz  start.sh
 # Helm Delete
 
 - Delete the chart.
-- `helm delete <chart-name>`
-
+- `helm delete <chart-name>`.
+- **Aliases:** uninstall, del, delete, un **Ex:** `helm del cassandra`.
+  
 ```
 $ helm delete nginx
 release "nginx" uninstalled
@@ -99,7 +101,7 @@ release "nginx" uninstalled
 # Helm Repo
 
 - Adding repo in the helm. 
-- `helm repo add <repo-name> <URL>`
+- `helm repo add <repo-name> <URL>`.
 
 ```
 $ helm repo add http://127.0.0.1:8080
@@ -126,14 +128,14 @@ $ helm repo list
 # Helm Search 
 
 - To search the repository. 
-- `helm search repo <repo-name>/<chart-name>`
+- `helm search repo <repo-name>/<chart-name>`.
 
 ```
 $ helm search repo nginx-deploy/nginx-deploy
 ```
 
 - To search in the helm hub.
-- `helm search hub <repo-name>`
+- `helm search hub <repo-name>`.
 
 ```
 # It'll display all repository
@@ -147,7 +149,7 @@ $ helm search hub
 $ cat /root/.config/helm/repositories.yaml
 ```
 
-- To view the containing cached repository indexes 
+- To view the containing cached repository indexes.
 
 ```
 $ cat /root/.cache/helm/repository
@@ -161,7 +163,7 @@ $ cat /root/.cache/helm/repository
 $ git clone https://github.com/Tej-Singh-Rana/helm-chart.git
 ```
 
-- Copy the chart archive file into the cloned repo directory and index 
+- Copy the chart archive file into the cloned repo directory and index.
 
 ```
 $ ls
@@ -199,16 +201,14 @@ $ git commit -m "Chart package" .
 $ git push
 ```
 
-- Add github repo into the helm repository 
+- Add github repo into the helm repository.
 
 ```
 $ helm repo add remote-helm https://raw.githubusercontent.com/Tej-Singh-Rana/helm-chart/main
 ```
 
-- List the helm repo
+- List the helm repo.
 
 ```
 $ helm repo list
 ```
-
-
