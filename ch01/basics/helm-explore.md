@@ -2,7 +2,7 @@
 
 - To pull helm chart archive file.
 - `helm pull repo/name`.
-
+- **Aliases:** pull, fetch **Ex:** `helm fetch cassandra/apache`.
 ```
 $ helm pull
 cassandra/  file://     http://     https://
@@ -86,6 +86,7 @@ NOTES:
 - `helm upgrade <release-name> repo/name  --version <chart-version>`.
 - `helm install <new-release-name> repo/name  --version <chart-version>`.
 - Adding flag `--version <chart-version>` to install or upgrade into the specific version.
+- To provide new values `--set` or `--values` or `-f` **Ex:** `helm upgrade -f newvalues.yaml cassandra ./cassandra`.
 
 ```
 $ helm search repo cassandra --versions                # It'll display all the specific versions
@@ -151,7 +152,7 @@ $ helm rollback cassandra-power 1
 
 - To get the history about release.
 - `helm history release-name`.
-
+- **Aliases:** history, hist **Ex:** `helm hist cassandra`.
 ```
 $ helm history cassandra
 REVISION        UPDATED                         STATUS          CHART           APP VERSION     DESCRIPTION
@@ -167,7 +168,7 @@ REVISION        UPDATED                         STATUS          CHART           
 
 - It'll show the all details of the chart individual or complete.
 - `helm show readme|values|chart|all repo/name`.
-
+- **Aliases:** show, inspect **Ex:** `helm inspect all cassandra`.
 ```
 $ helm show
 all     chart   readme  values
@@ -205,6 +206,7 @@ description: Chart for Apache HTTP Server
 - It'll uninstall the release.
 - `--dry-run` & `--keep-history` option available.
 - `--keep-history` - remove all associated resources and mark the release as deleted, but retain the release history.
+- **Aliases:** uninstall, del, delete, un **Ex:** `helm delete cassandra`.
 
 ```
 $ helm status cassandra
