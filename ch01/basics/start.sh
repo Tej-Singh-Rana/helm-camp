@@ -11,4 +11,5 @@ apt-get update
 apt-get install helm
 sleep 1
 echo -n "Installation completed!!"
+echo ""
 
